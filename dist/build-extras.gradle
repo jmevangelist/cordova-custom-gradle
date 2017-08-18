@@ -1,0 +1,42 @@
+println 'Applying configurations from build-extras'
+
+def projectName = "example" //set project's name here
+
+//////////////////////////
+// sample output:
+// example-release1.0.0-20170818170159.apk
+// example-debug1.0.0-debug-20170818162948.apk
+//////////////////////////
+
+ext.postBuildExtras = {
+   android {
+      if (cdvReleaseSigningPropertiesFile) {
+         buildTypes {
+            release {
+               applicationVariants.all { variant ->
+                  variant.outputs.each { output ->
+                     def date = new Date();
+                     def formattedDate = date.format('yyyyMMddHHmmss')
+                     output.outputFile = new File(output.outputFile.parent,
+                        projectName + '-' + variant.name + variant.versionName + '-' + formattedDate +'.apk')
+                  }
+               }
+            }
+            debug {
+               applicationIdSuffix = ".debug"
+               versionNameSuffix = '-debug'
+               applicationVariants.all { variant ->
+                  variant.outputs.each { output ->
+                     def date = new Date();
+                     def formattedDate = date.format('yyyyMMddHHmmss')
+                     output.outputFile = new File(output.outputFile.parent,
+                        projectName + '-' + variant.name + variant.versionName + '-' + formattedDate +'.apk')
+                  }
+               }
+                 
+            }
+         }
+      }
+
+   }
+}

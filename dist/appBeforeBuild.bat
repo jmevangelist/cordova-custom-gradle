@@ -1,0 +1,1 @@
+copy "build-extras.gradle" "platforms/android/"
