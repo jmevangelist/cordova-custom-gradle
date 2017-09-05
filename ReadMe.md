@@ -23,7 +23,7 @@ keytool -genkey -v -keystore keystoreName.keystore -alias keystoreAlias -keyalg 
 5. Edit build-extras.gradle and build.json
 
 ## References 
-[1] [Cordova Hooks](https://cordova.apache.org/docs/en/latest/guide/appdev/hooks/index.html)
-[2] [Extending build gradle](http://cordova.apache.org/docs/en/7.x/guide/platforms/android/index.html#extending-buildgradle)
-[3] [Signing an app](http://cordova.apache.org/docs/en/7.x/guide/platforms/android/index.html#signing-an-app) 
+[1] [Cordova Hooks](https://cordova.apache.org/docs/en/latest/guide/appdev/hooks/index.html)  
+[2] [Extending build gradle](http://cordova.apache.org/docs/en/7.x/guide/platforms/android/index.html#extending-buildgradle)  
+[3] [Signing an app](http://cordova.apache.org/docs/en/7.x/guide/platforms/android/index.html#signing-an-app)  
 
